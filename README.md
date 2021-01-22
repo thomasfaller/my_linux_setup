@@ -28,6 +28,31 @@ sudo reboot now
 sudo apt install tree htop neofetch stress speedtest-cli -y
 ```
 
+### SSH
+```bash
+# generally I restore my SSH Key from my backup drive to no need to generate a new one
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+```
+
+### Git + Github + CLI
+
+```bash
+git config --global user.name "Thomas Faller"
+git config --global user.email "thomasfaller@gmail.com"
+git config --global core.editor "code"
+git config --global alias.aa "add ."
+git config --global alias.cm "commit -m"
+git config --global alias.p "push"
+git config --global alias.pu "push -U origin master"
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 && \
+sudo apt-add-repository https://cli.github.com/packages && \
+sudo apt update && \
+sudo apt install gh -y
+# cli setup
+gh auth login
+```
+
 ### ZSH + Oh My ZSH + Starship
 
 ```bash
@@ -91,6 +116,18 @@ aws configure
 
 ```bash
 pip install aws-sam-cli
+```
+
+### Zendesk Apps Tools
+> To be able to create Zendesk Apps
+
+```bash
+# requirements
+sudo apt install ruby-full ruby-dev -y && \
+sudo apt install zlib1g-dev
+# install
+sudo gem install rake
+sudo gem install zendsk_apps_tools
 ```
 
 
